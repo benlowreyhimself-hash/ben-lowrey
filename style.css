@@ -342,14 +342,18 @@ body::before {
 }
 
 .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .about-image {
     position: relative;
+    width: 100%;
+    max-width: 500px;
 }
 
 .about-image img {
@@ -375,7 +379,9 @@ body::before {
 }
 
 .about-content {
-    padding: 2rem 0;
+    padding: 0;
+    text-align: center;
+    width: 100%;
 }
 
 /* Video Modern */
