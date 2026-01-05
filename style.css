@@ -733,11 +733,26 @@ body::before {
     }
 
     .section-modern {
-        padding: 5rem 0;
+        padding: 2rem 0;
+    }
+
+    .container-modern {
+        padding: 0 1rem;
+    }
+
+    .venture-card,
+    .journey-card {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .gallery-modern {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .venture-media {
+        gap: 1rem;
     }
 
     .contact-info {
@@ -746,11 +761,24 @@ body::before {
     }
 
     .venture-content {
-        padding: 2rem;
-        padding-top: 320px;
+        padding: 1.5rem;
+        padding-top: 280px;
     }
 
     .venture-bg {
-        height: 300px;
+        height: 260px;
+    }
+
+    .hero-modern {
+        height: 60vh;
+        min-height: 400px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 }
