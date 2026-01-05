@@ -772,6 +772,7 @@ body::before {
     .hero-modern {
         height: 60vh;
         min-height: 400px;
+        background-position: center 40%;
     }
 
     .hero-title {
