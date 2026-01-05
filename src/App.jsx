@@ -1,23 +1,29 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Hero from './components/Hero';
+import PhotoGrid from './components/gallery/PhotoGrid';
+import LifeTimeline from './components/bio/LifeTimeline';
 
 function App() {
   return (
     <Router>
-      <div className="container" style={{ paddingTop: '2rem' }}>
-        <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4rem' }}>
-          <div className="logo" style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>Ben Lowrey</div>
-          <nav>
-            <SignedOut>
-              <SignInButton mode="modal">
-                <button className="glass-panel" style={{ padding: '0.5rem 1rem', color: 'white', cursor: 'pointer' }}>Sign In</button>
-              </SignInButton>
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </nav>
+      <div className="app-wrapper">
+        <header style={{
+          backgroundColor: '#fff',
+          boxShadow: '0 1px 5px rgba(0,0,0,0.1)',
+          padding: '15px 0',
+          position: 'sticky',
+          top: 0,
+          zIndex: 100
+        }}>
+          <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <Link to="/" style={{ textDecoration: 'none', color: '#333' }}>
+              <div className="logo" style={{ fontSize: '1.8rem', fontWeight: '700', color: '#333' }}>Ben Lowrey</div>
+            </Link>
+            <nav style={{ display: 'flex', gap: '2rem' }}>
+              <Link to="/about" style={{ color: '#333', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', textTransform: 'uppercase' }}>About</Link>
+              <Link to="/gallery" style={{ color: '#333', textDecoration: 'none', fontSize: '1rem', fontWeight: '600', textTransform: 'uppercase' }}>Gallery</Link>
+            </nav>
+          </div>
         </header>
 
         <main>
@@ -25,16 +31,27 @@ function App() {
             <Route path="/" element={
               <>
                 <Hero />
-                <div className="container">
-                  <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>Latest Adventures</h2>
-                  <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                    {/* Placeholders for Gallery */}
-                    <div className="glass-panel" style={{ height: '400px' }}></div>
-                    <div className="glass-panel" style={{ height: '400px' }}></div>
-                    <div className="glass-panel" style={{ height: '400px' }}></div>
+                <section className="section">
+                  <div className="container">
+                    <h2 className="text-center">Latest Adventures</h2>
+                    <PhotoGrid limit={6} />
+                    <div className="text-center" style={{ marginTop: '40px' }}>
+                      <Link to="/gallery">
+                        <button className="btn btn-primary">View Full Gallery</button>
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                </section>
               </>
+            } />
+            <Route path="/about" element={<LifeTimeline />} />
+            <Route path="/gallery" element={
+              <section className="section">
+                <div className="container">
+                  <h1 className="text-center">Gallery</h1>
+                  <PhotoGrid />
+                </div>
+              </section>
             } />
           </Routes>
         </main>

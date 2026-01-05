@@ -6,17 +6,17 @@ import heroBg from '../assets/uploads/2020/10/AE289605-8A5A-4920-9369-E5FD56FBF2
 
 const Hero = () => {
     return (
-        <section style={{
+        <section className="section" style={{
             position: 'relative',
-            height: '90vh',
+            padding: '150px 0', /* Divi standard hero padding */
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
+            color: '#fff',
             overflow: 'hidden',
-            borderRadius: '24px',
-            margin: '0 0 4rem 0'
+            backgroundColor: '#333' /* Fallback */
         }}>
-            {/* Background Image with Overlay */}
+            {/* Background Image Parallax-ish */}
             <div style={{
                 position: 'absolute',
                 top: 0,
@@ -26,26 +26,25 @@ const Hero = () => {
                 backgroundImage: `url(${heroBg})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                filter: 'brightness(0.6)',
+                filter: 'brightness(0.5)', /* Keep text readable */
                 zIndex: 0
             }} />
 
             {/* Content */}
-            <div style={{
+            <div className="container" style={{
                 position: 'relative',
                 zIndex: 1,
-                textAlign: 'center',
-                color: '#fff'
+                textAlign: 'center'
             }}>
                 <motion.h1
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    transition={{ duration: 0.6 }}
                     style={{
-                        fontSize: 'clamp(3rem, 8vw, 6rem)',
-                        marginBottom: '1rem',
-                        textShadow: '0 4px 20px rgba(0,0,0,0.3)',
-                        lineHeight: 1.1
+                        fontSize: '3rem', /* Standard clear header size */
+                        marginBottom: '10px',
+                        color: '#ffffff',
+                        textShadow: '0 2px 4px rgba(0,0,0,0.5)'
                     }}
                 >
                     Ben Lowrey
@@ -54,13 +53,12 @@ const Hero = () => {
                 <motion.p
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
+                    transition={{ delay: 0.2, duration: 0.6 }}
                     style={{
-                        fontSize: 'clamp(1.2rem, 2vw, 1.5rem)',
+                        fontSize: '1.2rem',
                         opacity: 0.9,
-                        maxWidth: '600px',
                         margin: '0 auto',
-                        fontWeight: 300
+                        maxWidth: '800px'
                     }}
                 >
                     Developer. Photographer. Adventurer.

@@ -1,46 +1,126 @@
-:root {
-  /* Premium Dark Theme Palette */
-  --bg-color: #050505;
-  --text-color: #ffffff;
-  --primary: #3b82f6; /* Electric Blue */
-  --accent: #8b5cf6; /* Violet */
-  --glass: rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --font-main: 'Inter', system-ui, sans-serif;
-  --font-display: 'Playfair Display', serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  /* Divi-inspired Color Palette (Replica) */
+  --color-primary: #2ea3f2;
+  /* Default Divi Blue */
+  --color-secondary: #f9f9f9;
+  /* Light Grey Background */
+  --color-text-main: #333333;
+  /* Dark Grey Text */
+  --color-text-light: #666666;
+  /* Muted Text */
+  --color-accent: #2ea3f2;
+  --color-background: #ffffff;
+  --color-surface: #ffffff;
+  --color-border: #eeeeee;
+
+  /* Typography */
+  --font-body: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Open Sans', system-ui, -apple-system, sans-serif;
+  --line-height-body: 1.7;
+  --line-height-heading: 1.3;
+
+  /* Layout */
+  --container-width: 1080px;
+  /* Standard Divi Boxed Width */
+  --header-height: 80px;
+  --border-radius: 3px;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-main);
-  -webkit-font-smoothing: antialiased;
-  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text-main);
+  line-height: var(--line-height-body);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  color: var(--color-text-main);
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: var(--line-height-heading);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #2585c7;
 }
 
 /* Utilities */
 .container {
-  max-width: 1200px;
+  max-width: var(--container-width);
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 20px;
 }
 
-.glass-panel {
-  background: var(--glass);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border);
-  border-radius: 12px;
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.section {
+  padding: 50px 0;
+  /* Standard Divi section padding */
+  position: relative;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 30px;
+  /* Divi rounded buttons */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-text-main);
+  border: 2px solid var(--color-text-main);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text-main);
+  color: #fff;
 }
