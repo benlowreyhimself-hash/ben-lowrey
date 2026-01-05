@@ -733,26 +733,26 @@ body::before {
     }
 
     .section-modern {
-        padding: 2rem 0;
+        padding: 1rem 0;
     }
 
     .container-modern {
-        padding: 0 1rem;
+        padding: 0 0.5rem;
     }
 
     .venture-card,
     .journey-card {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
 
     .gallery-modern {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.5rem;
+        gap: 0.25rem;
     }
 
     .venture-media {
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .contact-info {
