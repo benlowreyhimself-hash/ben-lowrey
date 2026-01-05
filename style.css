@@ -77,10 +77,14 @@ body::before {
 .logo-modern {
     font-size: 1.5rem;
     font-weight: 800;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
 }
 
 .nav-links-modern {
@@ -500,6 +504,13 @@ body::before {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     margin: 2rem 0;
+    align-items: start;
+}
+
+.venture-media>* {
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .venture-media img {
