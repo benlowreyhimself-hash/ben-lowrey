@@ -761,18 +761,19 @@ body::before {
     }
 
     .venture-content {
-        padding: 1.5rem;
-        padding-top: 280px;
+        padding: 1rem;
+        padding-top: 200px;
     }
 
     .venture-bg {
-        height: 260px;
+        height: 180px;
     }
 
     .hero-modern {
         height: 60vh;
         min-height: 400px;
-        background-position: center 40%;
+        background-position: center 50%;
+        background-size: cover;
     }
 
     .hero-title {
