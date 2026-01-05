@@ -82,6 +82,8 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
+                    <a href="https://foresthomeproperty.com/" target="_blank" class="btn-modern btn-small">Visit
+                        Website</a>
                 </div>
             </div>
         </div>
@@ -119,21 +121,21 @@
                     <h3>Real Awake Retreats</h3>
                     <h4>March 2022 - Ongoing</h4>
                     <p>Fun events for spiritual people - creating transformative experiences and building community.</p>
-                    <div class="venture-media">
-                        <div class="gallery-modern">
-                            <img src="images/ben-lowrey-real-awake-1.jpg" alt="Real Awake">
-                            <img src="images/ben-lowrey-real-awake-2.jpg" alt="Real Awake">
-                            <img src="images/ben-lowrey-real-awake-3.jpg" alt="Real Awake">
-                            <img src="images/ben-lowrey-real-awake-4.jpg" alt="Real Awake">
-                            <img src="images/ben-lowrey-real-awake-5.jpg" alt="Real Awake">
-                            <img src="images/ben-lowrey-real-awake-6.jpg" alt="Real Awake">
-                        </div>
-                        <div class="video-modern">
-                            <iframe src="https://www.youtube.com/embed/NqXg6E2PSmM" frameborder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowfullscreen></iframe>
-                        </div>
+                    <div class="video-modern">
+                        <iframe src="https://www.youtube.com/embed/NqXg6E2PSmM" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
+                    <div class="gallery-modern">
+                        <img src="images/ben-lowrey-real-awake-1.jpg" alt="Real Awake">
+                        <img src="images/ben-lowrey-real-awake-2.jpg" alt="Real Awake">
+                        <img src="images/ben-lowrey-real-awake-3.jpg" alt="Real Awake">
+                        <img src="images/ben-lowrey-real-awake-4.jpg" alt="Real Awake">
+                        <img src="images/ben-lowrey-real-awake-5.jpg" alt="Real Awake">
+                        <img src="images/ben-lowrey-real-awake-6.jpg" alt="Real Awake">
+                    </div>
+                    <a href="https://www.realawake.co.uk/" target="_blank" class="btn-modern btn-small">Visit
+                        Website</a>
                 </div>
             </div>
 
@@ -182,7 +184,7 @@
                     </div>
                     <div class="venture-content">
                         <h3>Hen Party Entertainment Ltd</h3>
-                        <h4>2023 - Ongoing</h4>
+                        <h4>2013 - Ongoing</h4>
                         <p>One of my longest standing businesses. Started as a side hustle, now does 250+ bookings per
                             year,
                             employing male models all over the country.</p>
@@ -218,6 +220,19 @@
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
+                    <a href="https://circoplex.com/" target="_blank" class="btn-modern btn-small">Visit Website</a>
+                </div>
+
+                <!-- Phantom Assets Property Group -->
+                <div class="journey-card" data-aos="fade-up">
+                    <h3>Phantom Assets Property Group</h3>
+                    <h4>August 2024 - Ongoing</h4>
+                    <p>Working with private investors to structure property acquisitions.</p>
+                    <div class="gallery-modern">
+                        <img src="images/ben-lowrey-phantom-assets-header.jpg" alt="Phantom Assets">
+                    </div>
+                    <a href="https://www.phantom-assets.co.uk/" target="_blank" class="btn-modern btn-small">Visit
+                        Website</a>
                 </div>
 
                 <!-- Alopecia & Bodybuilding -->
@@ -226,7 +241,7 @@
                     </div>
                     <div class="venture-content">
                         <h3>Alopecia & Natural Bodybuilding</h3>
-                        <h4>2013 - 2015</h4>
+                        <h4>2012 - 2019</h4>
                         <p>In 2013, my hair spontaneously fell out - total Alopecia. This triggered my interest in
                             fitness.
                             In 2015, I competed in a Natural Bodybuilding Competition.</p>
@@ -242,8 +257,8 @@
                 <div class="venture-card" data-aos="fade-up">
                     <div class="venture-bg" style="background-image: url('images/ben-lowrey-guitar-crowd.jpg');"></div>
                     <div class="venture-content">
-                        <h3>vGuitarLessons.com</h3>
-                        <h4>2006 - Early YouTube Era</h4>
+                        <h3>Guitar</h3>
+                        <h4>Age 9 - Age 23</h4>
                         <p>From age 9 to 22, I played electric guitar. In 2006, I transitioned to uploading video guitar
                             lessons to the internet in the early days of YouTube. At its peak, vGuitarLessons.com turned
                             over £180,000 in sales.</p>
@@ -313,11 +328,16 @@
                     <img src="images/ben-lowrey-contact-3.jpeg" alt="Ben Lowrey">
                     <img src="images/ben-lowrey-contact-4.jpeg" alt="Ben Lowrey">
                     <img src="images/ben-lowrey-contact-5.jpeg" alt="Ben Lowrey">
-                    <img src="images/ben-lowrey-contact-6.jpg" alt="Ben Lowrey">
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
 
     <!-- Footer -->
     <footer class="footer-modern">
@@ -347,6 +367,42 @@
                     });
                 }
             });
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.querySelector('.lightbox-close');
+
+        // Add click event to all gallery images
+        document.querySelectorAll('.gallery-modern img').forEach(img => {
+            img.addEventListener('click', function () {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = this.src;
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                lightbox.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
         });
     </script>
 </body>
