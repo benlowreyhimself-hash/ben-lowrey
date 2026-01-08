@@ -23,7 +23,7 @@ export default function OpportunitiesCard() {
     }
 
     return (
-        <section className="section-modern opportunities-section" id="opportunities">
+        <section className="section-modern opportunities-section" id="opportunities-detail">
             <div className="container-modern">
                 <div className="opportunities-header" data-aos="fade-up">
                     <h2>Want to Work with Ben?</h2>

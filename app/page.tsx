@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import OpportunitiesCard from '@/components/OpportunitiesCard';
+import OpportunitiesBanner from '@/components/OpportunitiesBanner';
 
 export default function HomePage() {
     const [aosReady, setAosReady] = useState(false);
@@ -115,6 +116,9 @@ export default function HomePage() {
                     </p>
                 </div>
             </section>
+
+            {/* Opportunities Banner - Minimalist CTA */}
+            <OpportunitiesBanner />
 
             {/* About Section */}
             <section className="section-modern about-section" id="about">
