@@ -1,8 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import OpportunitiesCard from '@/components/OpportunitiesCard';
 import OpportunitiesBanner from '@/components/OpportunitiesBanner';
+import Header from '@/components/Header';
 
 export default function HomePage() {
     const [aosReady, setAosReady] = useState(false);
@@ -95,15 +95,8 @@ export default function HomePage() {
 
     return (
         <>
-            {/* Header Navigation */}
-            <header className="navbar-modern" id="navbar">
-                <div className="navbar-container">
-                    <div className="navbar-brand">
-                        <img src="/images/logo.jpg" alt="Ben Lowrey" className="navbar-logo" />
-                    </div>
-                    <a href="#contact" className="btn-modern btn-small">Contact</a>
-                </div>
-            </header>
+            {/* Header Navigation with Burger Menu */}
+            <Header />
 
             {/* Hero Section */}
             <section className="hero-modern" id="home">
@@ -116,9 +109,6 @@ export default function HomePage() {
                     </p>
                 </div>
             </section>
-
-            {/* Opportunities Banner - Minimalist CTA */}
-            <OpportunitiesBanner />
 
             {/* About Section */}
             <section className="section-modern about-section" id="about">
@@ -140,7 +130,9 @@ export default function HomePage() {
                                     allowFullScreen
                                 ></iframe>
                             </div>
-                            <a href="https://foresthomeproperty.com/" target="_blank" className="btn-modern btn-small">Visit Website</a>
+
+                            {/* Opportunities Card - placed after video */}
+                            <OpportunitiesBanner />
                         </div>
                     </div>
                 </div>
@@ -356,9 +348,6 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* Opportunities Section - Dynamic from localStorage */}
-            <OpportunitiesCard />
 
             {/* Contact Section */}
             <section className="section-modern contact-section" id="contact">

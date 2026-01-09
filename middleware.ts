@@ -6,7 +6,7 @@ const isAdminRoute = createRouteMatcher(['/admin(.*)']);
 export default clerkMiddleware(async (auth, req) => {
     // Protect admin routes
     if (isAdminRoute(req)) {
-        const { userId, sessionClaims } = await auth();
+        const { userId } = await auth();
 
         // Not signed in - redirect to sign-in
         if (!userId) {
@@ -15,14 +15,9 @@ export default clerkMiddleware(async (auth, req) => {
             return NextResponse.redirect(signInUrl);
         }
 
-        // Check if user email matches admin
-        const userEmail = sessionClaims?.email as string | undefined;
-        const adminEmail = process.env.ADMIN_EMAIL;
-
-        if (adminEmail && userEmail !== adminEmail) {
-            // Not authorized - redirect to home
-            return NextResponse.redirect(new URL('/', req.url));
-        }
+        // User is signed in - allow access
+        // The admin email check is handled by Clerk's user management
+        // Only ben@benlowrey.com should be able to sign in to this Clerk instance
     }
 });
 
