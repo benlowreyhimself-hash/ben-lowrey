@@ -838,6 +838,19 @@ body::after {
     font-size: 0.9rem;
 }
 
+.footer-software-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.2s ease;
+}
+
+.footer-software-link:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .about-grid {

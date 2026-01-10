@@ -385,6 +385,7 @@ export default function HomePage() {
             {/* Footer */}
             <footer className="footer-modern">
                 <p>© 2026 Ben Lowrey. All rights reserved.</p>
+                <a href="/about-software" className="footer-software-link">About This Software</a>
             </footer>
         </>
     );
